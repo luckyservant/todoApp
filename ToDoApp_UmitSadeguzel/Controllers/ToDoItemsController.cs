@@ -19,7 +19,7 @@ namespace ToDoApp_UmitSadeguzel.Controllers
        @author: Umit Sadeguzel
        goal: Create a to-do app. with Repository and UnitOfWork patterns
        Feature Set: 
-                1- List current items
+                1- List current items.
                 2- Add New Item with Ajax support
                 3- Edit Item
                 4- Check duplicate items
