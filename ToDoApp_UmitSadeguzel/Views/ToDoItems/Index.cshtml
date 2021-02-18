@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ToDoApp_UmitSadeguzel.ViewModels.ListVM>
+
+<h2>@ViewBag.Title </h2>
+
+
+<p>
+    <input type="hidden" id="CreateActionUrl" value='@Url.Action("Create","ToDoItems")' />
+    
+    <label>Item</label> <input type="text" name="ItemDesc" id="ItemDesc" />
+    <input type="button" value="Create Task" onclick="createItem()" />
+</p>
+<div id="ItemListDiv">
+   @Html.Partial("_Index" ,@Model)
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/ToDoApp")
+}

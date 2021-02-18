@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ToDoApp_UmitSadeguzel.ViewModels.ListVM>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsCompleted)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (item.IsCompleted)
+                {
+                    <s>@Html.DisplayFor(modelItem => item.ItemDesc) </s>
+                }
+                else
+                { @Html.DisplayFor(modelItem => item.ItemDesc)
+            }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsCompleted)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { itemId = item.ItemId }) |
+                @Html.ActionLink("Details", "Details", new { itemId = item.ItemId })
+            </td>
+        </tr>
+    }
